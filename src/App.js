@@ -5,6 +5,7 @@ import ReadLocations from "./components/ReadLocations";
 import CreateLocation from "./components/CreateLocation";
 import UpdateLocation from "./components/UpdateLocation";
 import DeleteLocation from "./components/DeleteLocation";
+import Weather from "./components/Weather/Weather";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/create" element={<CreateLocation />} />
           <Route exact path="/update/:id" element={<UpdateLocation />} />
           <Route exact path="/delete/:id" element={<DeleteLocation />} />
+          <Route exact path="/weather" element={<Weather />} />
         </Routes>
       </LocationProvider>
     </div>
