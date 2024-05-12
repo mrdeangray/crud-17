@@ -6,10 +6,11 @@ const Weather = () => {
   const [currCoords, setCurrCoords] = useState("");
   const [locationError, getLocationError] = useState("");
   const [currCity, setCurrCity] = useState("");
-  const API_Key = "91288b654882993c5a4fd4033922f152";
+
 
   useEffect(() => {
     handleGetCity();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleGetCity = async () => {
@@ -25,7 +26,7 @@ const Weather = () => {
     // http://api.openweathermap.org/geo/1.0/reverse?lat=51.5098&lon=-0.1180&limit=5&appid={API key}
 
     const { data } = await axios(
-      `http://api.openweathermap.org/geo/1.0/reverse?lat=${coords.latitude}&lon=${coords.longitude}&limit=${limit}&appid=${API_Key}`
+      `http://api.openweathermap.org/geo/1.0/reverse?lat=${coords.latitude}&lon=${coords.longitude}&limit=${limit}&appid=${process.env.REACT_APP_API_key}`
     );
 
     setCurrCity(data.toString());
